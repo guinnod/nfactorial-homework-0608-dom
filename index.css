@@ -1,0 +1,54 @@
+.centerItem {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 400px;
+    height: 400px;
+    flex-direction: column;
+    padding: 0;
+    align-self: center;
+}
+.bodyy {
+    background-image: url('./media/waranont-joe-T7qyLNPwgKA-unsplash.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100vw;
+}
+.body2{
+    object-fit: cover;
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: -1;
+    height: 100vh;
+    width: 100vw;
+}
+.hp_slide{
+    width:100%;
+    background:white;
+    height:10px;
+    border-radius: 10px;
+}
+.hp_range{
+    width:0%;
+    background: violet;
+    height:10px;
+    border-radius: 10px;
+}
+.controller{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.cons{
+margin-top: 20px;
+height: 40px;
+margin-left: 15px;
+margin-right: 15px;
+}
