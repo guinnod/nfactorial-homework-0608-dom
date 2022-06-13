@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Music Player</title>
+    <link rel="icon" href="./media/radio.png" type="image/x-icon">
+    <link rel="stylesheet" href="index.css">
+    
+</head>
+<body style="padding: 0px; margin: 0px;">
+    <Video class="body2"  type="video/mp4" autoplay loop id="vid">
+        <source src="./media/Rainbow_Nebula_4K_Motion_Background.mp4">
+    </Video>
+    <div class="bodyy" id="mainD">
+    <audio id="player" src="./media/Doin_Time.mp3"></audio>
+        <div class="centerItem">
+        <img src="./media/wallpaperflare.com_wallpaper.jpg" alt="photo" style="width: 28vw; max-width: 320px; margin-top: 50px; border-radius: 15px;">
+        <h1 style="color: whitesmoke; margin-bottom: 0; text-shadow: 1px 1px 2px black, 0 0 25px blue, 0 0 5px darkblue;">Doin' Time</h1>
+        <h2 style="color:whitesmoke; text-shadow: 1px 1px 2px black, 0 0 25px blue, 0 0 5px darkblue;">Song by Lana Del Rey</h2>
+        <div class="hp_slide">
+            <div id="hp" class="hp_range"></div>
+       </div>
+       <div class="controller">
+        <img class="cons" src="./media/rewind-xxl.png">
+        <img id="playPause" class="cons" src="/media/computer-icons-alarm-clocks-watch-pause-button-59451e370c8a3b8f7438fd55b48d2c43.png" onClick="javascript:play()" style="height: 60px" >
+        <img class="cons" src="/media/fast-forward-xxl.png">
+       </div>
+    </div>
+</div>
+    <script>
+        var player = document.getElementById('player');
+        
+        
+        player.ontimeupdate = function() {
+            var curr = player.currentTime;
+        var dur = player.duration;
+            var el = document.getElementById('hp');
+             el.style.width = curr*100/dur+"%";
+             //console.log(curr + " " + dur);
+     }
+         function play() {
+        document.getElementById('player').play();
+        let btn = document.getElementById('playPause');
+        btn.setAttribute( "onClick", "javascript: pause();" );
+        btn.src="./media/pngegg.png";
+        document.getElementById('mainD').style.background = 'none';
+       }
+       function pause() {
+        document.getElementById('player').pause();
+        document.getElementById('playPause').src="/media/computer-icons-alarm-clocks-watch-pause-button-59451e370c8a3b8f7438fd55b48d2c43.png";
+        document.getElementById('playPause').setAttribute( "onClick", "javascript: play();" );
+        let backI = document.getElementById('mainD');
+        backI.style.background = "url('./media/waranont-joe-T7qyLNPwgKA-unsplash.jpg')";
+       backI.style.backgroundSize = 'cover';
+        backI.style.backgroundAttachment = "fixed";
+        backI.style.backgroundRepeat = 'no-repeat';
+       }
+             </script>
+</body>
+</html>
